@@ -5,6 +5,8 @@
 trigger:
 - main
 
+pool: my-personal-computer
+
 resources:
 - repo: self
 
@@ -17,7 +19,7 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool: my-personal-computer
+    
     steps:
     - task: Docker@2
       displayName: Build an image
