@@ -11,8 +11,8 @@ resources:
 - repo: self
 
 variables:
-  tag: '$(Build.BuildId)'
-
+   imageName: 'pipelines-javascript-docker'
+   
 stages:
 - stage: Build
   displayName: Build image
@@ -25,6 +25,5 @@ stages:
       displayName: Build an image
       inputs:
         command: build
-        dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
-        tags: |
-          $(tag)
+        dockerfile: /app/Dockerfile
+
