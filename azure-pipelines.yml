@@ -1,13 +1,14 @@
-trigger: none
+trigger: 
+- none
 pool: my-personal-computer
 
 variables:
- imageName: 'pipelines-javascript-docker'
+  imageName: 'pipelines-javascript-docker'
 
- steps:
- - task: Docker@2
-   displayName: Build an image
-   inputs:
+  steps:
+  - task: Docker@2
+    displayName: Build an image
+    inputs:
      repository: $(imageName)
      command: build
      Dockerfile: app/Dockerfile
